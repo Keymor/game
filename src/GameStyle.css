@@ -1,0 +1,711 @@
+.body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(212, 210, 204);
+    box-shadow: 0px 0px 100px rgba(76, 65, 44, 0.142) inset;
+    width: 700px;
+    height: 500px;
+    transition: 1s;
+    border-radius: 5px;
+}
+
+.divForAnimation{
+    position: absolute;
+}
+
+/*-----------UI-----------*/
+
+.topInterface{
+    display: flex;
+    height: fit-content;
+    z-index: 20;
+}
+
+.inventoryButton{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2ch;
+    box-shadow: 0px 2px 6px rgba(65, 45, 45, 0.552);
+    margin: 5px;
+    height: 40px;
+    width: 100px;
+    border-radius: 15px;
+    border-width: 0px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.stats{
+    position: flex;
+    height: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2ch;
+    box-shadow: 0px 2px 6px rgba(65, 45, 45, 0.552);
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.562);
+    padding: 10px 10px 0px 10px;
+    border-radius: 8px;
+    margin: 5px auto 0px auto;
+}
+
+.questsButton{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2ch;
+    box-shadow: 0px 2px 6px rgba(65, 45, 45, 0.552);
+    margin: 5px 5px 0px 0px;
+    height: 40px;
+    width: 100px;
+    border-radius: 15px;
+    border-width: 0px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+li {
+    width: fit-content;
+    margin: 5px;
+}
+
+/*-----------Action-----------*/
+
+.actionContainer{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2ch;
+    padding-top: 20px;
+    margin-top: auto;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 30px;
+    width: 700px;
+    height: 200px;
+    transition: 1s;
+    opacity: 100%;
+}
+
+.actionText{
+    margin-top: 50px;
+}
+
+.action{
+    color: aliceblue;
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.714);
+    padding-top: 20px;
+    text-align: center;
+    width: 150px;
+    height: 250px;
+    background-image: linear-gradient(rgb(83, 83, 83),rgba(172, 168, 168, 0.935), rgba(255, 255, 255, 0));
+    border-radius: 15px;
+    transition: 1s;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.action:hover, .inventoryButton:hover, .questsButton:hover{
+    box-shadow: 0px 0px 50px rgba(64, 233, 255, 0.941);
+    scale: 110%;
+    text-shadow: 0px 0px 15px rgb(255, 255, 255);
+}
+
+.hide{
+    scale: 130%;
+    opacity: 0%;
+}
+.hideDelay{
+    z-index: -1;
+}
+
+/*-----------Inventory-----------*/
+
+.invContainer{
+    position: absolute;
+    margin: 65px 20px 20px 20px;
+    padding: 0px;
+    background-image: linear-gradient(rgb(246, 246, 246), rgb(246, 246, 246), rgba(255, 255, 255, 0.374));
+    border-radius: 8px;
+    width: 310px;
+    height: 345px;
+    transition: 0.7s;
+}
+
+.textWhide{
+    width: auto;
+    margin-left: 36%;
+}
+
+.invText{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(162, 158, 153, 0.165);
+    color: rgb(78, 70, 59);
+    width: fit-content;
+    margin: 5px;
+    margin-bottom: 0px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(65, 45, 45, 0.174) inset;
+    padding: 5px;
+}
+
+.inventoryList {
+    display: grid;
+    grid-template-columns: 76px 76px 76px;
+    gap: 20px;
+    width: 270px;
+    height: 270px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 8px;
+    transition: 0.5s ease-out;
+    overflow: scroll;
+}
+
+.inventoryGridItem{
+    width: 76px;
+    height: 126px;
+    background-color: rgba(162, 158, 153, 0.279);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(65, 45, 45, 0.174) inset;
+    padding: auto;
+    margin: 0px;
+}
+
+.invItemHover{
+    position: fixed;
+    min-width: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+    background-color: rgb(106, 103, 99);
+    padding: 10px;
+    border-radius: 10px;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.invButton{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2ch;
+    box-shadow: 0px 2px 6px rgba(65, 45, 45, 0.552);
+    height: 20px;
+    margin: 1px;
+    width: fit-content;
+    min-width: 58px;
+    border-radius: 15px;
+    border-width: 0px;
+    cursor: pointer;
+}
+
+.invUp{
+    transform: translateX(0vh);
+    opacity: 100%;
+    z-index: 10;
+}
+
+.invDown{
+    transform: translateX(-50vh);
+    opacity: 0%;
+    z-index: 0;
+}
+
+/*-----------Quest-----------*/
+
+.questList {
+    position: absolute;
+    display: block;
+    background-image: linear-gradient(rgb(246, 246, 246), rgb(246, 246, 246), rgba(255, 255, 255, 0.374));
+    width: fit-content;
+    max-width: 140px;
+    min-width: 60px;
+    margin: 65px 20px 5px 500px;
+    padding: 5px 13px 5px 25px;
+    border-radius: 8px;
+    transition: 0.5s ease-out;
+    opacity: 0%;
+    z-index: 20;
+}
+
+.questText{
+    inline-size: 130px;
+    overflow-wrap: break-word;
+}
+
+.questUp {
+    transform: translateX(0vh);
+    opacity: 100%;
+}
+
+.questDown {
+    transform: translateX(20vh);
+    opacity: 0%;
+}
+
+/*-----------Shop-----------*/
+
+.shopContainer{
+    transform: translateY(-50%);
+}
+
+.shopBox {
+    margin: 0px auto 0px auto;
+    padding: 5px;
+    width: 500px;
+    height: 427px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(65, 45, 45, 0.174);
+    background-color: rgb(236, 236, 236);
+}
+
+.storeText{
+    text-align: center;
+    width: 150px;
+    padding: 2px;
+    margin: 0px auto 0px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(162, 158, 153, 0.165);
+    color: rgb(78, 70, 59);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(65, 45, 45, 0.174) inset;
+}
+
+.storeExitButton{
+    text-align: center;
+    width: fit-content;
+    padding: 2px;
+    margin: 0px auto 0px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(255, 255, 255, 0.862);
+    color: rgb(78, 70, 59);
+    width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.traidWin{
+    display: grid;
+    text-align: center;
+    grid-template-columns: 130px 130px 130px;
+    gap: 15px;
+    margin: 5px auto 5px auto;
+    padding: 10px;
+    width: 390px;
+    height: 150px;
+    box-shadow: 0px 0px 10px rgba(65, 45, 45, 0.174)inset;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+
+.shopItem{
+    width: 100px;
+    height: 130px;
+    background-color: rgba(162, 158, 153, 0.279);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(65, 45, 45, 0.174) inset;
+    padding: auto;
+    margin: 0px;
+}
+
+.buyButton{
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(255, 255, 255, 0.862);
+    color: rgb(78, 70, 59);
+    width: 70px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.sellButton{
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(255, 255, 255, 0.862);
+    color: rgb(78, 70, 59);
+    width: 70px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin: 2px auto 0px auto;
+}
+
+.description{
+    text-align: center;
+    width: 100px;
+    background-color: rgba(0, 0, 0, 0.427);
+    border-radius: 5px;
+}
+
+.invListShop{
+    display: grid;
+    text-align: center;
+    grid-template-columns: 130px 130px 130px;
+    gap: 15px;
+    margin: 5px auto 5px auto;
+    padding: 10px;
+    width: 390px;
+    height: 150px;
+    box-shadow: 0px 0px 10px rgba(65, 45, 45, 0.174)inset;
+    border-radius: 5px;
+    overflow: scroll;
+}
+
+.itemInvShop{
+    width: 100px;
+    height: 130px;
+    background-color: rgba(162, 158, 153, 0.279);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(65, 45, 45, 0.174) inset;
+}
+
+.fade{
+    opacity: 0%;
+    z-index: -1;
+    visibility: hidden;
+}
+.appear{
+    opacity: 100%;
+    z-index: 10;
+    visibility: visible;
+}
+
+/*-----------Fight-----------*/
+
+.enemyContainer{
+    display: flex;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    margin: 14% auto 0 auto;
+    transition: 0.5s ease-in;
+}
+
+.enemyBox{
+    width: 150px;
+    height: 200px;
+    background-color: rgb(235, 232, 208);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(29, 21, 21, 0.799);
+    margin: auto;
+}
+
+.healthEnemyContainer{
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+    height: 50px;
+}
+
+.enemyHealth{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(65, 7, 7);
+    background-color: rgb(110, 217, 122);
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+}
+
+.enemyName{
+    color: rgb(60, 15, 15);
+    margin: 1px 0 1px 0;
+}
+
+.enemyUp{
+    transform: translateY(0px) translateX(0px);
+    opacity: 100%;
+    width: 100%;
+}
+
+.enemyDown{
+    transform: translateY(200px) translateX(700px);
+    opacity: 0%;
+    width: 10%;
+}
+
+.userFightContainer{
+    display: flex;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    margin: 45% auto 0 auto;
+    transition: 1s ease-in;
+    z-index: 20;
+}
+
+.fightButtonContainer{
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 60px;
+    background-color: rgb(235, 232, 208);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(81, 61, 61, 0.345);
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+}
+
+.leftButton{
+    display: flex;
+    height: 40px;
+    width: 60px;
+    box-shadow: 0 3px 6px rgba(81, 61, 61, 0.345);
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.middleButton{
+    display: flex;
+    height: 40px;
+    width: 60px;
+    box-shadow: 0 3px 6px rgba(81, 61, 61, 0.345);
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightButton{
+    display: flex;
+    height: 40px;
+    width: 60px;
+    box-shadow: 0 3px 6px rgba(81, 61, 61, 0.345);
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+/*-----------Text-Massage-----------*/
+
+.messegeGeneration {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2ch;
+    position: absolute;
+    bottom: 0;
+    width: 700px;
+    transition: 0.5s ease-out;
+}
+
+.messegeContainer {
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.783);
+    border: 0px;
+    height:80px;
+}
+
+.messegeButton2 {
+    margin-left: 10px;
+    padding: 5px;
+    height: 40px;
+    width: fit-content;
+    border-radius: 10px;
+    border-width: 0px;
+    cursor: pointer;
+}
+
+.messegeButton1 {
+    margin-left: 10px;
+    padding: 5px;
+    height: 40px;
+    width: fit-content;
+    border-radius: 10px;
+    border-width: 0px;
+    cursor: pointer;
+    animation: none;
+    box-shadow: 0px 0px 20px rgba(255, 213, 106, 0.941);
+}
+
+.messegeButton1:disabled{
+    cursor: not-allowed;
+}
+
+
+
+.animUp {
+    opacity: 100%;
+    z-index: 10;
+}
+
+.animDown {
+    opacity: 0%;
+    z-index: 0;
+}
+
+/*-----------Test-----------*/
+
+.testContainer {
+    position: absolute;
+    bottom: 0;
+    margin-left: 95%;
+    height: 100px;
+    z-index: 11;
+}
+
+.testButton {
+    border-radius: 20px;
+    border-width: 1px;
+    padding: 10px;
+    cursor: pointer;
+}   
+
+/*-------------------BG----------------------*/
+
+.bgCave {
+    background-image: url('img/cave.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 330px 270px;
+}
+
+.bgForest {
+    background-image: url('img/forest.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 330px 270px;
+}
+
+.bgCastle {
+    background-image: url('img/castle.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 330px 270px;
+}
+
+.bgVillage{
+    background-image: url('img/village.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 380px 310px;
+}
+
+/*-------------------Items----------------------*/
+
+.itemSword {
+    display: block;
+    margin: auto auto 10px auto;
+    background-image: url('img/sword1.png');
+    background-size: contain;
+    background-position: center;
+    height: 70px;
+    width: 76px;
+}
+
+.itemArmor {
+    display: block;
+    margin: auto auto 10px auto;
+    background-image: url('img/armor1.png');
+    background-size: contain;
+    background-position: center;
+    height: 70px;
+    width: 76px;
+}
+
+.flask {
+    display: block;
+    margin: auto auto 10px auto;
+    background-image: url('img/flask.png');
+    background-size: contain;
+    background-position: center;
+    height: 70px;
+    width: 76px;
+}
+
+.ironOre {
+    display: block;
+    margin: auto auto 10px auto;
+    background-image: url('img/ironOre.png');
+    background-size: contain;
+    background-position: center;
+    height: 70px;
+    width: 70px;
+}
+
+.lether {
+    display: block;
+    margin: auto auto 10px auto;
+    background-image: url('img/lether.png');
+    background-size: contain;
+    height: 70px;
+    width: 70px;
+}
+
+/*-------------------Enemys----------------------*/
+
+.wolf {
+    display: block;
+    margin: 0px auto 0px auto;
+    background-image: url('img/wolf.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    height: 180px;
+    width: 150px;
+}
+
+.bear {
+    display: block;
+    margin: 0px auto 0px auto;
+    background-image: url('img/bear.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    height: 180px;
+    width: 150px;
+}
+
+/*-------------------Animation----------------------*/
+
+.shake{
+    animation: shake ease-in-out 1s;
+}
+
+.damage{
+    animation: damage ease-in-out 1s;
+}
+.damageP{
+    animation: damage 1s ease-in-out 2s;
+}
+
+@keyframes popUp {
+    0% {scale: 100%;}
+    50% {scale: 115%;}
+    100% {scale: 100%;}
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+@keyframes damage {
+    0% { scale: 100%; color: rgb(255, 0, 0);}
+    50% { scale: 150%; color: rgb(255, 0, 0);}
+    100% { scale: 100%; color: rgb(255, 0, 0);}
+}
