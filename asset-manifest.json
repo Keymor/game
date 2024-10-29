@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/game/static/css/main.eb64b7fb.css",
-    "main.js": "/game/static/js/main.bc13f2fc.js",
+    "main.css": "/game/static/css/main.4f63a3bc.css",
+    "main.js": "/game/static/js/main.43ad3ba1.js",
     "static/js/453.26bf219d.chunk.js": "/game/static/js/453.26bf219d.chunk.js",
     "static/media/wolf.png": "/game/static/media/wolf.f6301fac21a64d03db92.png",
     "static/media/forest.png": "/game/static/media/forest.b82601b1b4add3b8e67a.png",
@@ -9,16 +9,19 @@
     "static/media/cave.png": "/game/static/media/cave.a06bb570c458dd9968f4.png",
     "static/media/armor1.png": "/game/static/media/armor1.6c18fcbf1aabc97dbbe4.png",
     "static/media/bear.png": "/game/static/media/bear.7af43982f841405d8c73.png",
+    "static/media/book.png": "/game/static/media/book.3ace74cf129be1c70b05.png",
     "static/media/flask.png": "/game/static/media/flask.42e4ea44591e9a3d0f9e.png",
     "static/media/castle.png": "/game/static/media/castle.93c3acb7ba80e5052521.png",
     "static/media/sword1.png": "/game/static/media/sword1.88b6589c54e8e3e5f54f.png",
+    "static/media/heart.png": "/game/static/media/heart.e7fb1f4506b49854ee94.png",
+    "static/media/bag.png": "/game/static/media/bag.97b25a95d7b2f5c15076.png",
     "index.html": "/game/index.html",
-    "main.eb64b7fb.css.map": "/game/static/css/main.eb64b7fb.css.map",
-    "main.bc13f2fc.js.map": "/game/static/js/main.bc13f2fc.js.map",
+    "main.4f63a3bc.css.map": "/game/static/css/main.4f63a3bc.css.map",
+    "main.43ad3ba1.js.map": "/game/static/js/main.43ad3ba1.js.map",
     "453.26bf219d.chunk.js.map": "/game/static/js/453.26bf219d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.eb64b7fb.css",
-    "static/js/main.bc13f2fc.js"
+    "static/css/main.4f63a3bc.css",
+    "static/js/main.43ad3ba1.js"
   ]
 }
