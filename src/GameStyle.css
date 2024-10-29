@@ -12,8 +12,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: rgb(212, 210, 204);
-    box-shadow: 0px 0px 100px rgba(76, 65, 44, 0.142) inset;
+    background-color: rgb(173, 221, 234);
+    box-shadow: 0px 0px 100px rgba(42, 71, 100, 0.504) inset;
     width: 700px;
     height: 500px;
     transition: 1s;
@@ -30,43 +30,56 @@
     display: flex;
     height: fit-content;
     z-index: 20;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 1px 6px rgba(48, 19, 19, 0.846);
 }
 
 .inventoryButton{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2ch;
-    box-shadow: 0px 2px 6px rgba(65, 45, 45, 0.552);
+    box-shadow: 
+    0px 2px 6px rgba(65, 45, 45, 0.552), 
+    inset 0px 4px 5px rgba(255, 234, 219, 0.839), 
+    inset 0px -1px 5px rgba(39, 32, 25, 0.552);
+    background-color: rgb(255, 216, 165);
     margin: 5px;
-    height: 40px;
-    width: 100px;
-    border-radius: 15px;
-    border-width: 0px;
+    height: auto;
+    width: auto;
+    border-radius: 8px;
+    border: 4px solid rgb(255, 255, 255);
     cursor: pointer;
     transition: 1s;
 }
 
 .stats{
+    display: inline-flex;
+    align-items: center;
     position: flex;
     height: 30px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2ch;
     box-shadow: 0px 2px 6px rgba(65, 45, 45, 0.552);
     width: fit-content;
-    background-color: rgba(255, 255, 255, 0.562);
-    padding: 10px 10px 0px 10px;
+    background-color: rgb(255, 216, 165);
+    padding: 5px;
     border-radius: 8px;
+    border: 4px solid rgb(255, 255, 255);
     margin: 5px auto 0px auto;
 }
 
 .questsButton{
+    margin: 5px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2ch;
-    box-shadow: 0px 2px 6px rgba(65, 45, 45, 0.552);
-    margin: 5px 5px 0px 0px;
-    height: 40px;
-    width: 100px;
-    border-radius: 15px;
-    border-width: 0px;
+    box-shadow: 
+    0px 2px 6px rgba(65, 45, 45, 0.552), 
+    inset 0px 4px 5px rgba(255, 234, 219, 0.839), 
+    inset 0px -1px 5px rgba(39, 32, 25, 0.552);
+    background-color: rgb(255, 216, 165);
+    height: auto;
+    width: auto;
+    border-radius: 8px;
+    border: 4px solid rgb(255, 255, 255);
     cursor: pointer;
     transition: 1s;
 }
@@ -99,21 +112,23 @@ li {
 }
 
 .action{
-    color: aliceblue;
-    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.714);
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 1px 5px rgba(48, 19, 19, 0.623);
+    box-shadow: 0px 0px 30px rgba(208, 245, 255, 0.714);
+    background-image: linear-gradient(rgb(255, 202, 148),rgba(171, 155, 143, 0.935), rgb(175, 210, 240));
+    border: 4px solid rgb(255, 255, 255);
     padding-top: 20px;
     text-align: center;
     width: 150px;
-    height: 250px;
-    background-image: linear-gradient(rgb(83, 83, 83),rgba(172, 168, 168, 0.935), rgba(255, 255, 255, 0));
+    height: 215px;
     border-radius: 15px;
     transition: 1s;
     cursor: pointer;
     z-index: 1;
 }
 
-.action:hover, .inventoryButton:hover, .questsButton:hover{
-    box-shadow: 0px 0px 50px rgba(64, 233, 255, 0.941);
+.action:hover, .inventoryButton:hover, .questsButton:hover, .messegeButton1:hover, .messegeButton2:hover{
+    box-shadow: 0px 0px 50px rgba(110, 238, 255, 0.941);
     scale: 110%;
     text-shadow: 0px 0px 15px rgb(255, 255, 255);
 }
@@ -130,9 +145,11 @@ li {
 
 .invContainer{
     position: absolute;
-    margin: 65px 20px 20px 20px;
+    margin: 80px 20px 20px 20px;
     padding: 0px;
-    background-image: linear-gradient(rgb(246, 246, 246), rgb(246, 246, 246), rgba(255, 255, 255, 0.374));
+    background-image: linear-gradient(rgb(255, 202, 148),rgba(171, 155, 143, 0.935), rgb(175, 210, 240));
+    border: 4px solid rgb(255, 255, 255);
+    box-shadow: 0px 2px 6px rgba(65, 45, 45, 0.552);
     border-radius: 8px;
     width: 310px;
     height: 345px;
@@ -146,13 +163,14 @@ li {
 
 .invText{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgba(162, 158, 153, 0.165);
-    color: rgb(78, 70, 59);
+    background-color: rgb(233, 180, 127);
+    box-shadow: inset 0px 0px 6px rgba(65, 45, 45, 0.552);
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 1px 5px rgba(48, 19, 19, 0.623);
     width: fit-content;
     margin: 5px;
     margin-bottom: 0px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(65, 45, 45, 0.174) inset;
     padding: 5px;
 }
 
@@ -172,9 +190,9 @@ li {
 .inventoryGridItem{
     width: 76px;
     height: 126px;
-    background-color: rgba(162, 158, 153, 0.279);
+    background-color: rgb(206, 162, 118);
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(65, 45, 45, 0.174) inset;
+    box-shadow: 0px 0px 10px rgb(100, 69, 37) inset;
     padding: auto;
     margin: 0px;
 }
@@ -207,7 +225,7 @@ li {
 .invUp{
     transform: translateX(0vh);
     opacity: 100%;
-    z-index: 10;
+    z-index: 20;
 }
 
 .invDown{
@@ -219,18 +237,29 @@ li {
 /*-----------Quest-----------*/
 
 .questList {
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 1px 5px rgba(48, 19, 19, 0.623);
     position: absolute;
     display: block;
-    background-image: linear-gradient(rgb(246, 246, 246), rgb(246, 246, 246), rgba(255, 255, 255, 0.374));
+    background-image: linear-gradient(rgb(255, 202, 148),rgba(171, 155, 143, 0.935), rgb(175, 210, 240));
+    border: 4px solid rgb(255, 255, 255);
+    box-shadow: 0px 2px 6px rgba(65, 45, 45, 0.552);
+    border-radius: 8px;
     width: fit-content;
     max-width: 140px;
     min-width: 60px;
-    margin: 65px 20px 5px 500px;
+    margin: 80px 20px 5px 500px;
     padding: 5px 13px 5px 25px;
-    border-radius: 8px;
     transition: 0.5s ease-out;
     opacity: 0%;
     z-index: 20;
+}
+
+.acceptQuest{
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+    border: solid;
 }
 
 .questText{
@@ -251,7 +280,9 @@ li {
 /*-----------Shop-----------*/
 
 .shopContainer{
-    transform: translateY(-50%);
+    transform: translateY(-53%);
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 1px 5px rgba(48, 19, 19, 0.623);
 }
 
 .shopBox {
@@ -259,9 +290,10 @@ li {
     padding: 5px;
     width: 500px;
     height: 427px;
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px rgba(65, 45, 45, 0.174);
-    background-color: rgb(236, 236, 236);
+    box-shadow: 0px 0px 30px rgba(208, 245, 255, 0.714);
+    background-image: linear-gradient(rgb(255, 202, 148),rgba(171, 155, 143, 0.935), rgb(175, 210, 240));
+    border: 4px solid rgb(255, 255, 255);
+    border-radius: 10px;
 }
 
 .storeText{
@@ -271,9 +303,8 @@ li {
     margin: 0px auto 0px auto;
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgba(162, 158, 153, 0.165);
-    color: rgb(78, 70, 59);
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(65, 45, 45, 0.174) inset;
+    box-shadow: 0px 0px 10px rgba(65, 45, 45, 0.587) inset;
 }
 
 .storeExitButton{
@@ -282,8 +313,7 @@ li {
     padding: 2px;
     margin: 0px auto 0px auto;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgba(255, 255, 255, 0.862);
-    color: rgb(78, 70, 59);
+    background-color: rgb(130, 159, 181);
     width: 100px;
     border-radius: 5px;
     cursor: pointer;
@@ -306,9 +336,9 @@ li {
 .shopItem{
     width: 100px;
     height: 130px;
-    background-color: rgba(162, 158, 153, 0.279);
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(65, 45, 45, 0.174) inset;
+    box-shadow: 0px 0px 10px rgba(65, 45, 45, 0.583) inset;
+    background-color: rgb(201, 167, 125);
     padding: auto;
     margin: 0px;
 }
@@ -362,9 +392,9 @@ li {
 .itemInvShop{
     width: 100px;
     height: 130px;
-    background-color: rgba(162, 158, 153, 0.279);
+    box-shadow: 0px 0px 10px rgba(65, 45, 45, 0.583) inset;
+    background-color: rgb(201, 167, 125);
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(65, 45, 45, 0.174) inset;
 }
 
 .fade{
@@ -392,9 +422,12 @@ li {
 .enemyBox{
     width: 150px;
     height: 200px;
-    background-color: rgb(235, 232, 208);
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 1px 5px rgba(48, 19, 19, 0.623);
+    box-shadow: 0px 0px 30px rgba(208, 245, 255, 0.714);
+    background-image: linear-gradient(rgb(255, 202, 148),rgba(171, 155, 143, 0.935), rgb(175, 210, 240));
+    border: 4px solid rgb(255, 255, 255);
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(29, 21, 21, 0.799);
     margin: auto;
 }
 
@@ -403,6 +436,7 @@ li {
     bottom: 0;
     width: 150px;
     height: 50px;
+    margin-bottom: 4px;
 }
 
 .enemyHealth{
@@ -410,8 +444,10 @@ li {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: rgb(65, 7, 7);
-    background-color: rgb(110, 217, 122);
+    color: rgb(255, 255, 255);
+    background-image: url('img/heart.png');
+    background-position: center;
+    background-size: 138%;
     border-radius: 50px;
     height: 50px;
     width: 50px;
@@ -419,7 +455,8 @@ li {
 }
 
 .enemyName{
-    color: rgb(60, 15, 15);
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 1px 5px rgba(48, 19, 19, 0.623);
     margin: 1px 0 1px 0;
 }
 
@@ -450,9 +487,8 @@ li {
     align-items: center;
     width: 300px;
     height: 60px;
-    background-color: rgb(235, 232, 208);
+    background-color: rgba(235, 232, 208, 0);
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(81, 61, 61, 0.345);
     margin: auto;
     display: grid;
     grid-template-columns: auto auto auto;
@@ -470,13 +506,22 @@ li {
 }
 
 .middleButton{
-    display: flex;
-    height: 40px;
-    width: 60px;
-    box-shadow: 0 3px 6px rgba(81, 61, 61, 0.345);
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 1px 5px rgba(48, 19, 19, 0.623);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2ch;
+    box-shadow: 
+    0px 2px 6px rgba(65, 45, 45, 0.552), 
+    inset 0px 4px 5px rgba(255, 234, 219, 0.839), 
+    inset 0px -1px 5px rgba(39, 32, 25, 0.552);
+    background-color: rgb(255, 216, 165);
+    margin: 5px;
+    height: 50px;
+    width: 80px;
+    border-radius: 8px;
+    border: 4px solid rgb(255, 255, 255);
     cursor: pointer;
-    justify-content: center;
-    align-items: center;
+    transition: 1s;
 }
 
 .rightButton{
@@ -498,44 +543,68 @@ li {
     bottom: 0;
     width: 700px;
     transition: 0.5s ease-out;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 1px 5px rgba(48, 19, 19, 0.623);
 }
 
 .messegeContainer {
     border-radius: 10px;
     margin: 10px;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.783);
-    border: 0px;
+    background-color: rgb(255, 216, 165);
+    border: 4px solid rgb(255, 255, 255);
     height:80px;
 }
 
 .messegeButton2 {
-    margin-left: 10px;
-    padding: 5px;
-    height: 40px;
-    width: fit-content;
-    border-radius: 10px;
-    border-width: 0px;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 1px 5px rgba(48, 19, 19, 0.623);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.7ch;
+    box-shadow: 
+    0px 2px 6px rgba(65, 45, 45, 0.552), 
+    inset 0px 4px 5px rgba(255, 234, 219, 0.839), 
+    inset 0px -1px 5px rgba(39, 32, 25, 0.552);
+    background-color: rgb(255, 216, 165);
+    margin: 5px;
+    min-width: 60px;
+    min-height: 40px;
+    height: auto;
+    width: auto;
+    border-radius: 8px;
+    border: 4px solid rgb(255, 255, 255);
     cursor: pointer;
+    margin-left: 10px;
+    width: fit-content;
+    animation: none;
 }
 
 .messegeButton1 {
-    margin-left: 10px;
-    padding: 5px;
-    height: 40px;
-    width: fit-content;
-    border-radius: 10px;
-    border-width: 0px;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 1px 5px rgba(48, 19, 19, 0.623);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.7ch;
+    box-shadow: 
+    0px 2px 6px rgba(65, 45, 45, 0.552), 
+    inset 0px 4px 5px rgba(255, 234, 219, 0.839), 
+    inset 0px -1px 5px rgba(39, 32, 25, 0.552);
+    background-color: rgb(255, 216, 165);
+    margin: 5px;
+    min-width: 60px;
+    min-height: 40px;
+    height: auto;
+    width: auto;
+    border-radius: 8px;
+    border: 4px solid rgb(255, 255, 255);
     cursor: pointer;
+    margin-left: 10px;
+    width: fit-content;
     animation: none;
-    box-shadow: 0px 0px 20px rgba(255, 213, 106, 0.941);
 }
 
 .messegeButton1:disabled{
     cursor: not-allowed;
 }
-
-
 
 .animUp {
     opacity: 100%;
@@ -671,6 +740,41 @@ li {
     width: 150px;
 }
 
+/*-------------------UI-Icons----------------------*/
+
+.bag{
+    display: block;
+    margin: auto;
+    background-image: url('img/bag.png');
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+}
+
+.questIcon{
+    display: block;
+    margin: auto;
+    background-image: url('img/book.png');
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+}
+
+.heart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.9ch;
+    margin: 0px;
+    background-image: url('img/heart.png');
+    background-size: 150%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 40px;
+}
+
 /*-------------------Animation----------------------*/
 
 .shake{
@@ -705,7 +809,7 @@ li {
   }
 
 @keyframes damage {
-    0% { scale: 100%; color: rgb(255, 0, 0);}
-    50% { scale: 150%; color: rgb(255, 0, 0);}
-    100% { scale: 100%; color: rgb(255, 0, 0);}
+    0% { scale: 100%; color: white;}
+    50% { scale: 150%; color: red}
+    100% { scale: 100%; color: white;}
 }

@@ -96,7 +96,7 @@ function Game() {
       Id: 0,
       bgImg: 'bgCave',
       bgName: 'Cave',
-      text: 'Here is start of your great jorney! Let`s move forword.',
+      text: 'Here is start of your jorney! Let`s move forword.',
       firtsButtonText: 'Next',
       secondButtonText: ''
     },
@@ -140,15 +140,8 @@ function Game() {
     questGole: 2,
     questRevade: 10,
     isAccepted: false
-  },
-  {
-    type: 'lvl',
-    questText: 'Buy armor',
-    questCounter: 0,
-    questGole: 1,
-    questRevade: 200,
-    isAccepted: false
-  }])
+  }
+  ])
   const [disableButton, setDisableButton] = useState(false)
   const [firstStepCounter, setFirstStepCounter] = useState(0)
   const [anim, setAnim] = useState(false)
@@ -306,7 +299,7 @@ function Game() {
       textUpdate('You found some village!')
       setFirstStepCounter(1)
     } else if (firstStepCounter === 1){
-      setTextLog(t => ({ ...t, text: t.text + ' On the road you meet one man. He told you about problems in village with monsters.'}))
+      setTextLog(t => ({ ...t, text: t.text + " On the road you meet one man. He told you about problems in village with monsters in dungeon. But you don't stront enought. You need to get 100 exp."}))
       setFirstStepCounter(2)
     } else {
       setPlayerStats(p => ({
@@ -372,9 +365,9 @@ function Game() {
   }
 
   function fightSistem(side) {
-    let playerDamage = playerStats.damage - fightMode[1][side]
+    let playerDamage = (playerStats.damage + (Math.floor(Math.random() * 4))) - fightMode[1][side]
     let newMonsterHealth = fightMode[1].monsterHealth - (playerDamage <= 0 ? 0 : playerDamage)
-    let monsterDamage = fightMode[1].monsterDamage - playerStats.armor
+    let monsterDamage = (fightMode[1].monsterDamage + (Math.floor(Math.random() * 3))) - playerStats.armor
     let newPlayerHealth = playerStats.health - (monsterDamage <= 0 ? 0 : monsterDamage)
     setDisableButton(!disableButton)
 
@@ -416,7 +409,7 @@ function Game() {
       function massageDelay(){
           for (let index = 0; index < 4; index++){
             setTimeout(() => {
-              textUpdate(`${fightMode[1].monsterName} attach after ${3 - index}`)
+              textUpdate(`${fightMode[1].monsterName} attack after ${3 - index}`)
               if (index === 3){
                 setPlayerStats(p => ({...p, health: newPlayerHealth}))
               }
@@ -491,9 +484,9 @@ function Game() {
       {(pointer && pointerIndex[0].index >= 0) ? <div className='invItemHover' style={{ left: `${position.x}px`, top: `${position.y}px` }}>{pointerIndex[0].name}<br />{pointerIndex[0].description}</div> : null}
       <div className={`container ${location[playerStats.locationId].bgImg}`}>
         <div className='topInterface'>
-          <button className='inventoryButton' onClick={() => setInventory(!inventory)}>Inventory</button>
-          <div className={`stats ${ anim && fightMode[0].fight === true ? 'damageP' : null}`}>Health: {playerStats.health}/{playerStats.maximumHealth} | Exp: {playerStats.exp} | Gold: {playerStats.gold} | Damage: {playerStats.damage} | Armor: {playerStats.armor}</div>
-          <button className='questsButton' onClick={() => setQuests(!quests)}>Quests</button>
+          <button className='inventoryButton' onClick={() => setInventory(!inventory)}><div className='bag'></div></button>
+          <div className='stats'><div className={`heartText ${ anim && fightMode[0].fight === true ? 'damageP' : null}`}>HP: {playerStats.health}/{playerStats.maximumHealth} | </div> Exp: {playerStats.exp} | Gold: {playerStats.gold} | Damage: {playerStats.damage} | Armor: {playerStats.armor}</div>
+          <button className='questsButton' onClick={() => setQuests(!quests)}><div className='questIcon'></div></button>
         </div>
         <div className={`invContainer ${inventory ? 'invUp' : 'invDown'}`}>
           <div className='textWhide'><div className='invText'>Inventory</div></div>
@@ -566,9 +559,9 @@ function Game() {
         </div>
         <div className={`userFightContainer ${fightMode[0].fight ? 'enemyUp' : 'enemyDown'}`}>
           <div className='fightButtonContainer'>
-            <button onClick={() => fightSistem('leftArmor')} className='leftButton'>{playerStats.leftButtonHit}</button>
+            <button onClick={() => fightSistem('leftArmor')} className='leftButton' style={{visibility: playerStats.leftButtonHit.length <= 0 ? 'hidden' : 'visible'}}>{playerStats.leftButtonHit}</button>
             <button onClick={() => fightSistem('middleArmor')} className='middleButton' style={{pointerEvents: disableButton ? 'none' : 'auto'}}>{playerStats.middleButtonHit}</button>
-            <button onClick={() => fightSistem('rightArmor')} className='rightButton'>{playerStats.rightButtonHit}</button>
+            <button onClick={() => fightSistem('rightArmor')} className='rightButton' style={{visibility: playerStats.rightButtonHit.length <= 0 ? 'hidden' : 'visible'}}>{playerStats.rightButtonHit}</button>
           </div>
         </div>
         <div className={`shopContainer ${shop ? 'appear' : 'fade'}`}>
@@ -612,7 +605,6 @@ function Game() {
           style={{ 
             visibility: textLog.firtsButtonText.length === 0 ? 'hidden' : 'visible', 
             animation: playerStats.locationId <= 1 ? 'popUp 2s ease-in-out infinite' : 'none',
-            boxShadow: playerStats.locationId <= 1 ? '0px 0px 20px rgba(255, 213, 106, 0.941)' : 'none',
             pointerEvents: disableButton ? 'none' : 'auto'
           }}
           >
@@ -622,8 +614,8 @@ function Game() {
           onClick={playerStats.locationId === 2 ? () => buttonPressed('F') : null} 
           style={{ visibility: textLog.secondButtonText.length === 0 ? 'hidden' : 'visible' }}
           >
-            {textLog.secondButtonText}
-            </button>
+          {textLog.secondButtonText}
+          </button>
           <div className='messegeContainer'>
             <span className='messege'>{textLog.text}</span>
           </div>
